@@ -1,0 +1,1 @@
+kubectl create -f <rol.file.yaml>
