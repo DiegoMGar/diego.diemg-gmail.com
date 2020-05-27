@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: orange
+spec:
+  containers:
+  - command:
+      - sh
+    args:
+      - -c
+      - echo "The app is running!" && sleep 3600
+    image: busybox
+    name: orange-container
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  initContainers:
+  - command:
+      - sh
+    args:
+      - -c
+      - sleep 2
+    image: busybox
+    name: init-myservice
